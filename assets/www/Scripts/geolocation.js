@@ -58,7 +58,7 @@ function geoLocate() {
 
 function errorCallback_highAccuracy(position) {
     if (typeof (error) != undefined) {
-        if (error.code == error.TIMEOUT) {
+        if (error.code == PositionError.TIMEOUT) {
             // Attempt to get GPS loc timed out after 5 seconds, 
             // try low accuracy location
             navigator.geolocation.getCurrentPosition(
@@ -78,19 +78,19 @@ function locationError(error) {
     }
     if (typeof (error) != undefined) {
         switch (error.code) {
-            case error.PERMISSION_DENIED:
+            case PositionError.PERMISSION_DENIED:
                 alert("Location not provided");
                 break;
 
-            case error.POSITION_UNAVAILABLE:
+            case PositionError.POSITION_UNAVAILABLE:
                 alert("Current location not available");
                 break;
 
-            case error.TIMEOUT:
+            case PositionError.TIMEOUT:
                 alert("Timeout error");
                 break;
             default:
-                alert("unknown error");
+                alert("Unknown error");
                 break;
         }
     }
