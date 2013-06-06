@@ -45,5 +45,21 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+
+        app.getPosition();
+    },
+    getPosition: function() {
+        navigator.geolocation.getCurrentPosition(this.successHandler, this.errorHandler, { maximumAge: 600000, timeout: 5000, enableHighAccuracy: true });
+    },
+    successHandler: function(position) {
+        //alert('SUCCESS! Lat: ' + position.coords.latitude + '; Lon: ' + position.coords.longitude);
+        //alert('SUCCESS!');
+        //$('#latitude').html(position.coords.latitude);
+        //$('#longitude').html(position.coords.longitude);
+        window.location = "indexECAN.html";
+    },
+
+    errorHandler: function(error) {
+        alert('FAILED!');
     }
 };

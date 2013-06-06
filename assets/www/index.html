@@ -154,6 +154,11 @@ http://creativecommons.org/licenses/by-nc-sa/3.0/nz/
                 document.getElementsByTagName("head")[0].appendChild(fileref);
         }
 
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        function onDeviceReady() {
+            navigator.splashscreen.hide();
+        }
 
     </script>
 

@@ -32,7 +32,7 @@ public class CanterburyMaps extends DroidGap
 
         super.onCreate(savedInstanceState);
         // Set by <content src="index.html" /> in config.xml
-        super.loadUrl(Config.getStartUrl() , 100000);
+        super.loadUrl(Config.getStartUrl(), 100000); // Large time as we manually hide splash when ready
         //super.loadUrl("file:///android_asset/www/index.html")
     }
 }

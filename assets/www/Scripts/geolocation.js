@@ -49,23 +49,26 @@ function geoLocate() {
                     { maximumAge: 600000, timeout: 5000, enableHighAccuracy: true }
             );
 
-        watchId = navigator.geolocation.watchPosition(watchLocation, locationError);
+        //watchId = navigator.geolocation.watchPosition(watchLocation, locationError);
     }
     else {
         alert("Browser doesn't support Geolocation.");
     }
 }
 
-function errorCallback_highAccuracy(position) {
+function errorCallback_highAccuracy(error) {
     if (typeof (error) != undefined) {
         if (error.code == PositionError.TIMEOUT) {
-            // Attempt to get GPS loc timed out after 5 seconds, 
+            // Attempt to get GPS loc timed out after 5 seconds,
             // try low accuracy location
             navigator.geolocation.getCurrentPosition(
                    zoomToLocation,
                    locationError,
                    { maximumAge: 600000, timeout: 10000, enableHighAccuracy: false });
             return;
+        }
+        else {
+            locationError(error);
         }
     }
 }
