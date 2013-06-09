@@ -5024,6 +5024,7 @@ if (ecan.mapviewer.isNative) {
 
 // Cordova is loaded and it is now safe to make calls Cordova methods //
 function onDeviceReady() {
+    navigator.splashscreen.hide();
     document.addEventListener("offline", checkConnection, false);
     checkConnection();
 }
