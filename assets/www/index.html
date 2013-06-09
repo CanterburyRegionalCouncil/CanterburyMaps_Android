@@ -130,7 +130,10 @@ http://creativecommons.org/licenses/by-nc-sa/3.0/nz/
             loadjscssfile("Content/tablet.css", "css"); ////dynamically load and add this .css file
 
         //load cordova file if Native
-        if (ecan.mapviewer.isNative) loadjscssfile("cordova-2.7.0.js", "js");
+        if (ecan.mapviewer.isNative) {
+            loadjscssfile("cordova-2.7.0.js", "js");
+            document.addEventListener("deviceready", onDeviceReady, false);
+        }
 
         //function to load css or js file
         function loadjscssfile(filename, filetype) {
@@ -153,8 +156,6 @@ http://creativecommons.org/licenses/by-nc-sa/3.0/nz/
             if (typeof fileref != "undefined")
                 document.getElementsByTagName("head")[0].appendChild(fileref);
         }
-
-        document.addEventListener("deviceready", onDeviceReady, false);
 
         function onDeviceReady() {
             navigator.splashscreen.hide();
