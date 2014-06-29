@@ -1,0 +1,3 @@
+# view AndroidManifest.xml #generated:6
+-keep class nz.govt.canterburymaps.CanterburyMaps { <init>(...); }
+

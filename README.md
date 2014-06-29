@@ -1,3 +1,5 @@
+CanterburyMaps_iOS
+==================
 <img src="http://canterburymaps.govt.nz/Portal/Content/images/canterbury-maps-logo.png" alt="Canterbury Maps" />
 
 Canterbury maps is a modern, PhoneGap,  JavaScript project for making Canterbury Maps interactive maps available on a mobile device, developed by Canterbury Regional Council.
