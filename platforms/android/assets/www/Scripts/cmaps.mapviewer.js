@@ -4532,19 +4532,24 @@ ecan.mapviewer.shareTwitter = function () {
     // Strip all the current parameters
     url = url.substring(0, url.indexOf('#'));
 
+    url = url.replace('localhost:32064/', 'canterburymaps.govt.nz/viewer/');
+
+    url = url.replace('file://android_asset/www/', 'canterburymaps.govt.nz/viewer/');
+
+    //ignore above ...
+    url = 'http://canterburymaps.govt.nz/viewer/default.aspx?';
+
     // Append the webmap id
     url += '#webmap=' + ecan.mapviewer.currentWebmap;
 
-    url = url.replace('localhost:32064/', 'canterburymaps.govt.nz/viewer/');
-
     // Append the existing extent in the url
-    url += '#extent=' + ecan.mapviewer.getExtentString();
+    url += '&extent=' + ecan.mapviewer.getExtentString();
 
     // Encode the url
     url = escape(url);
 
     // Open the twitter window
-    window.open('https://twitter.com/intent/tweet?url=' + url,'_blank');
+    window.open('https://twitter.com/intent/tweet?screen_name=Canterbury_Maps&text=' + url  ,'_blank');
 };
 
 ecan.mapviewer.shareFacebook = function () {

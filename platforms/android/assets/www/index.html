@@ -121,11 +121,11 @@ http://creativecommons.org/licenses/by-nc-sa/3.0/nz/
             loadjscssfile("Content/quickmaps.css", "css"); ////dynamically load and add this .css file
 
         //load css mobile files
-        if (isMobile.any() != null & isMobile.iPad() == null)
+        if (isMobile.any() != null & isMobile.Tablet() == null)
             loadjscssfile("Content/phone.css", "css"); ////dynamically load and add this .css file
 
         //load css mobile files
-        if (isMobile.iPad() != null)
+        if (isMobile.Tablet() != null)
             loadjscssfile("Content/tablet.css", "css"); ////dynamically load and add this .css file
 
         //load cordova file if Native
